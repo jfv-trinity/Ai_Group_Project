@@ -1,0 +1,103 @@
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler{
+border-color: rgb(255,102,203);
+}
+
+.nav.navbar-nav.ml-auto div a{
+background-color: red;
+}
+
+.nav.navbar-nav.ml-auto li a{
+color:red;
+}
+
+.navbar{
+link
+color:red;
+background-color: #000000;
+}
+
+.navbar a:active{
+color:yellow;
+}
+
+.navbar a:hover{
+color:red;
+}
+
+.navbar a:link, a:visited{
+color:white;
+}
+
+.list-header{
+padding-top:10px;
+float:left;
+padding-right:10px;
+}
+
+.navbar-nav.ml-auto{
+color:white;
+}
+
+
+.navbar-nav.ml-auto a:hover{
+color:red;
+}
+
+.navbar-nav.ml-auto a:active{
+color:white;
+}
+
+.dropdown-menu.dropdown-menu-right{
+color: white;
+background-color: black;
+}
+
+.dropdown-menu.dropdown-menu-right a:hover{
+color: red;
+background-color: black;
+}
+
+.hidden-subtext{
+display: none;
+}
+
+.subtext{
+display: inherit;
+color: red;
+}
+
+
+
+/*
+Css for checkboxes
+*/
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+   /*  display: flex;*/
+   /* align-items: center;*/
+   /* justify-content: center;*/
+    height: 100vh;
+    background: #FFEFBA;
+    /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);*/
+    /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #FFFFFF, #FFEFBA);*/
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.container {
+    max-width: 640px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+}

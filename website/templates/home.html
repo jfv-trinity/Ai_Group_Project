@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                 <a2 class="navbar-brand" href="/">Car Quotation System</a2>
+        <br>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+
+
+    <div class="container">
+    <a2>Please fill the parameters below and click on Selling Price button to check car price</a2>
+
+
+        <form action="\predict" method="post">
+       
+            <h3>Year</h3><input id="first" name="yearOfRegistration" placeholder="eg. like the year '2010' "type="number" >
+        <br>
+            <h3>Month</h3><select name="monthOfRegistration" id="monthOfRegistration" required="required">
+                <option value="0">January</option>
+                <option value="1">Febuary</option>
+                <option value="2">March</option>
+                <option value="3">April</option>
+                <option value="4">May</option>
+                <option value="5">June</option>
+                <option value="6">July</option>
+                <option value="7">August</option>
+                <option value="8">September</option>
+                <option value="9">October</option>
+                <option value="10">November</option>
+                <option value="11">December</option>
+            </select>
+        <br> 
+        <br>
+        <h3>Vehicle Type</h3><select name="vehicleType" id="vehicleType" required="required">
+            <option value="3">Coupe</option>
+            <option value="7">SUV</option>
+            <option value="4">Sub-Compact</option>
+            <option value="6">Limousine</option>
+            <option value="4">Convertible</option>
+            <option value="1">Bus</option>
+            <option value="5">Camper</option>
+            <option value="0">Other</option>
+
+        </select>
+    <br> 
+        <br>  
+            <h3>Kilometers Driven</h3><input id="third" name="kilometer" type="number" placeholder="eg. 10000 Km driven before" required="required">
+        <br>
+        <br>
+            <h3>Power PS</h3><input id="fourth" name="powerPS" placeholder="Vehicle power in PS" type="number" required="required">
+        <br>
+        <br>   
+            
+            <h3>Fuel Type</h3><select name="fuelType" id="fuel" required="required">
+                <option value="1">Petrol</option>
+                <option value="3">Diesel</option>
+                <option value="0">CNG</option>
+            </select>
+        <br>
+        <br>
+            <h3>Damaged?</h3><select name="notRepairedDamage" id="notRepairedDamage" required="required">
+                <option value="0">Yes</option>
+                <option value="1">No</option>
+            </select>
+        <br>
+        <br>
+            <h3>Transmission Type</h3><select name="gearbox" id="research" required="required">
+                <option value="1">Manual Car</option>
+                <option value="0">Automatic Car</option>
+            </select>
+            
+            <br><br><br><button id="sub" type="submit ">Selling Price</button>
+        </form>
+        <br><br>
+        <h3>{{ prediction_text }}</h3>
+        <br>
+    </div>
+        
+</body>
+
+</html>
