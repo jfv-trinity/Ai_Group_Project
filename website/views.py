@@ -23,35 +23,3 @@ def register_page():
         verification()
         return render_template('home.html', user=current_user)
     return render_template("register.html", user=current_user)
-
-
-@views.route("/predict", methods=['POST'])
-def predict():
-    Fuel_Type_Diesel = 0
-
-    if request.method == 'POST':
-        yearOfRegistration = int(request.form['yearOfRegistration'])
-        kilometer = int(request.form['kilometer'])
-        vehicleType = int(request.form['vehicleType'])
-        fuelType = request.form['fuelType']
-        gearbox = request.form['gearbox']
-        powerPS = request.form['powerPS']
-        monthOfRegistration = request.form['monthOfRegistration']
-        notRepairedDamage = request.form['notRepairedDamage']
-
-        prediction = model.predict(np.array([[vehicleType,
-                                              yearOfRegistration,
-                                              gearbox,
-                                              powerPS,
-                                              kilometer,
-                                              monthOfRegistration,
-                                              fuelType,
-                                              notRepairedDamage]]))
-        output = round(prediction[0], 2)
-        if output < 0:
-            return render_template('index.html', prediction_texts="Sorry you cannot sell this car")
-        else:
-            print(output * 1.3)
-            return render_template('index.html', prediction_text="You can sell the Car at ${} ".format(output * 1.3))
-    else:
-        return render_template('index.html')
