@@ -1,0 +1,88 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %}
+{% block content %}
+<br>
+<form method="POST" form action="\predict">
+    <h5 align="center">Car Quotation System</h5>
+    <div class="form-group">
+        <label for="yearOfRegistration"><b>Year Manufactored:</b></label>
+        <input type="number" class="form-control" id="first" name="yearOfRegistration"
+        placeholder="eg. like the year '2010' " />
+    </div>
+    <div class="form-group">
+        <label for="monthOfRegistration"><b>Month In Year:</b></label>
+        <select class="form-control"name="monthOfRegistration" id="monthOfRegistration" required="required">
+            <option value="0">January</option>
+            <option value="1">Febuary</option>
+            <option value="2">March</option>
+            <option value="3">April</option>
+            <option value="4">May</option>
+            <option value="5">June</option>
+            <option value="6">July</option>
+            <option value="7">August</option>
+            <option value="8">September</option>
+            <option value="9">October</option>
+            <option value="10">November</option>
+            <option value="11">December</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="vehicleType"><b>Vehicle Type:</b></label>
+        <select class="form-control" name="vehicleType" id="vehicleType"  required="required">
+            <option value="3">Coupe</option>
+            <option value="7">SUV</option>
+            <option value="4">Sub-Compact</option>
+            <option value="6">Limousine</option>
+            <option value="4">Convertible</option>
+            <option value="1">Bus</option>
+            <option value="5">Camper</option>
+            <option value="0">Other</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="third"><b>Kilometers Driven:</b></label>
+        <input type="number" class="form-control" id="third" name="kilometer"
+            placeholder="eg. 10000 Km driven before" required="required">
+    </div>
+    <div class="form-group">
+        <label for="fourth"><b>Power PS:</b></label>
+        <input type="number" class="form-control" id="fourth" name="powerPS"
+        placeholder="Vehicle power in PS" required="required">
+    </div>
+    <div class="form-group">
+        <label for="fuelType"><b>Fuel Type:</b></label>
+        <select class="form-control" name="fuelType" id="fuel"
+         required="required">
+            <option value="1">Petrol</option>
+            <option value="3">Diesel</option>
+            <option value="0">CNG</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="notRepairedDamage"><b>Damage:</b></label>
+        <select class="form-control" name="notRepairedDamage" id="notRepairedDamage"
+         required="required">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="gearbox"><b>Transmission Type:</b></label>
+        <select class="form-control" name="gearbox" id="research"
+         required="required">
+            <option value="1">Manual Car</option>
+            <option value="0">Automatic Car</option>
+        </select>
+    </div>
+    <br>
+    <div align="center">
+        <button  type="submit" id="sub" value="Send Form" class="btn btn-success">Estimate</button>
+    </div>
+</form>
+<br>
+<br>
+<br>
+<br>
+<div align="center">
+    <h3>{{ prediction_text }}</h3>
+</div>
+{% endblock %}
